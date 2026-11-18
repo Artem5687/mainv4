@@ -1,8 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
+import { animate, inView } from 'motion'
+
+
 import slideBack from '../components/slideCover.vue'
 import tile from '../components/tile.vue'
-import { animate, inView } from 'motion'
+
 
 let gradient = `
   linear-gradient(
@@ -23,7 +26,7 @@ let desc = `
 
 let links = [
   {text: 'Подробнее', link: 'https://belbeton.ru/real-estate/price-list-for-property/'},
-  {text: 'Купить квартиру', link: 'https://belbeton.ru/real-estate/construction/buildings/zhk_na_nekrasova/'}
+  // {text: 'Купить квартиру', link: 'https://belbeton.ru/real-estate/construction/buildings/zhk_na_nekrasova/'}
 ]
 
 let tiles = [

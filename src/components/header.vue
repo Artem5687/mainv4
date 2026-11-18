@@ -4,12 +4,21 @@ import { ref, Transition } from 'vue'
 import gmenu from '../../mocks/mainMenu.json'
 import menuSection from '@/components/menuSection.vue';
 
+let props = defineProps({
+  phone: {default: '+7 (4722) 37-63-33'},
+})
+
+
+
 let isMenuShow = ref(false)
 let isSubMenuShow = ref(false)
 let subMenu = ref({})
 let mainMenu = gmenu.mainMenu
 
 let leaveTimeOut = null
+
+
+
 
 function toggleMenu () {
   if (isMenuShow.value) {
@@ -94,7 +103,7 @@ let breadcrumbLinks = [
   <div class="header__phone">
     <div class="header__phone__inner">
       <img class="header__phoneImg" src="/public/v4sources/icons/phone.svg">
-      <p class="header__phoneText"> +7 (4722) 37-63-33 </p>
+      <p class="header__phoneText">{{ props.phone }}</p>
     </div>
   </div>
 </header>
@@ -218,6 +227,7 @@ let breadcrumbLinks = [
   width: 20px;
   cursor: pointer;
   padding-left: 20px;
+  padding-top: 5px;
 }
 
 

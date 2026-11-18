@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory, createMemoryHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+
 
 const router = createRouter({
-  history: createMemoryHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -13,6 +13,7 @@ const router = createRouter({
       path: '/subreal',
       name: 'subreal',
       component: () => import('../pages/subreal.vue'),
+      meta: { headerPhone: '+7(4722) 33-38-38' },
     },
     {
       path: '/subzavod',
